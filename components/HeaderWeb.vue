@@ -14,6 +14,9 @@
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/latihan">Latihan</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/lifecycle">Lifecycle</a>
+          </li>
         </ul>
     </div>
     </div>
