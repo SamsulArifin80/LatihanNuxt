@@ -4,6 +4,10 @@
   <div class="title border-bottom d-flex align-items-center justify-content-between py-2">
     <h5>Task</h5>
     <div class="d-flex align-items-center">
+      <button class="btn btn-outline-primary py-1 px-3 me-4"
+      @click="shuffle">
+      Shuffle!
+      </button>
       <input
       type="text"
       class="form-control"
@@ -20,27 +24,29 @@
     </div>
     </div>
   </div>
-  <div class="list-task row">
-    <CardItem :task="tasks[0]" :isGrid="isGrid" />
-    <CardItem :task="tasks[1]" :isGrid="isGrid" />
-    <CardItem :task="tasks[2]" :isGrid="isGrid" />
+  <transition-group name="tasks" tag="div" class="list-task row">
     <CardItem
-    v-for="(task, i) in resultQuery"
-    :key="i"
+    v-for="task in resultQuery"
+    :key="task.id"
     :task="task"
     :isGrid="isGrid"
     />
-  </div>
+  </transition-group>
   <div class="action py-2">
     <a
-      v-if="!isCreating" href="#" class="add-button"
+      v-if="!isCreating"
+      href="#"
+      class="add-button"
       @click="isCreating=!isCreating">Add Task</a>
     <div v-else class="add-card">
       <div class="card mb-2">
         <div class="card-body d-flex flex-column p-0">
-        <input class="form-control border-0 mb-2" placeholder="Title" type="text">
+        <input class="form-control border-0 mb-2"
+        placeholder="Title"
+        type='text'>
         <textarea
-        class="form-control border-0 small" placeholder="Description"
+        class="form-control border-0 small"
+        placeholder="Description"
         rows="3"></textarea>
         </div>
       </div>
@@ -55,8 +61,9 @@
   </div>
   </div>
 </template>
+<script src="./scriptnyaindex.js"></script>
 <script>
-import CardItem from "@/components/Card/CardItem.vue"
+import CardItem from '@/components/Card/CardItem.vue'
 export default {
   layout (context) {
     return 'custom'
@@ -64,7 +71,7 @@ export default {
   components: {
     CardItem
   },
-  data() {
+  data () {
     return {
       searchQuery: '',
       // Tipe layout daftar task
@@ -74,39 +81,50 @@ export default {
       // Daftar task
       tasks: [
         {
+          id: 1,
           title: 'Task 1',
           description: 'ini deskripsi 1',
-          isDone: false,
+          isDone: false
         },
         {
+          id: 2,
           title: 'Tugas 2',
           description: 'ini deskripsi 2',
-          isDone: false,
+          isDone: false
         },
         {
+          id: 3,
           title: 'Kerja 3',
           description: 'ini deskripsi 3',
-          isDone: false,
-        },
+          isDone: false
+        }
       ]
     }
   },
   computed: {
-    resultQuery() {
+    resultQuery () {
       if (this.searchQuery) {
         return this.tasks.filter((item) => {
           return this.searchQuery
-          .toLowerCase()
-          .split(" ")
-          .every((v) => item.title.toLowerCase().includes(v));
-        });
+            .toLowerCase()
+            .split('')
+            .every(v => item.title.toLowerCase().includes(v))
+        })
       } else {
         console.log(this.tasks)
         return this.tasks
       }
     }
+  },
+  methods: {
+    shuffle () {
+      this.tasks = _.shuffle(this.tasks)
+    }
   }
 }
 </script>
 <style>
+#app .tasks-move {
+  transition: .4s;
+}
 </style>

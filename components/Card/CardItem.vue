@@ -23,33 +23,34 @@
             <div class="description-task small text-muted">
                 {{ task.description }}
             </div>
+            <input class="form-control form-control-sm" type="date" />
         </div>
     </div>
 </template>
 <script>
-    export default {
-        props: {
-            task: {
-                type: Object,
-                default() {
-                    return {}
-                }
-            },
-            isGrid: {
-                type: Boolean,
-                required: true,
-                default: false
-            }
-        },
-        computed: {
-            localTask: {
-                get() {
-                    return this.task
-                },
-                set(newValue) {
-                    this.$emit('update:task', newValue)
-                },
-            },
-        }
+export default {
+  props: {
+    task: {
+      type: Object,
+      default () {
+        return {}
+      }
+    },
+    isGrid: {
+      type: Boolean,
+      required: true,
+      default: false
     }
+  },
+  computed: {
+    localTask: {
+      get () {
+        return this.task
+      },
+      set (newValue) {
+        this.$emit('update:task', newValue)
+      }
+    }
+  }
+}
 </script>
