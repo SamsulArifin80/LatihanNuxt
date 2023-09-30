@@ -1,0 +1,17 @@
+{
+  "FooterWeb": {
+    "description": "Auto imported from components/FooterWeb.vue"
+  },
+  "HeaderWeb": {
+    "description": "Auto imported from components/HeaderWeb.vue"
+  },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  },
+  "CardItem": {
+    "description": "Auto imported from components/Card/CardItem.vue"
+  }
+}

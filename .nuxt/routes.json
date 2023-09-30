@@ -1,0 +1,44 @@
+[
+  {
+    "name": "app - Copy",
+    "path": "/app%20-%20Copy",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\app - Copy\\\\index.vue",
+    "chunkName": "pages/app - Copy/index"
+  },
+  {
+    "name": "form",
+    "path": "/form",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\form.vue",
+    "chunkName": "pages/form"
+  },
+  {
+    "name": "latihan",
+    "path": "/latihan",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\latihan.vue",
+    "chunkName": "pages/latihan"
+  },
+  {
+    "name": "lifecycle",
+    "path": "/lifecycle",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\lifecycle.vue",
+    "chunkName": "pages/lifecycle"
+  },
+  {
+    "name": "list",
+    "path": "/list",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\list.vue",
+    "chunkName": "pages/list"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  },
+  {
+    "name": "app - Copy-detail-id",
+    "path": "/app%20-%20Copy/detail/:id",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\app - Copy\\\\detail\\\\_id.vue",
+    "chunkName": "pages/app - Copy/detail/_id"
+  }
+]
