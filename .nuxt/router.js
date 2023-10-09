@@ -4,13 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _409c76f2 = () => interopDefault(import('..\\pages\\app - Copy\\index.vue' /* webpackChunkName: "pages/app - Copy/index" */))
-const _2c559058 = () => interopDefault(import('..\\pages\\form.vue' /* webpackChunkName: "pages/form" */))
-const _89432f72 = () => interopDefault(import('..\\pages\\latihan.vue' /* webpackChunkName: "pages/latihan" */))
-const _c02d00f4 = () => interopDefault(import('..\\pages\\lifecycle.vue' /* webpackChunkName: "pages/lifecycle" */))
-const _604eb732 = () => interopDefault(import('..\\pages\\list.vue' /* webpackChunkName: "pages/list" */))
-const _7606a224 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
-const _de437204 = () => interopDefault(import('..\\pages\\app - Copy\\detail\\_id.vue' /* webpackChunkName: "pages/app - Copy/detail/_id" */))
+const _6cfa5506 = () => interopDefault(import('..\\pages\\app\\index.vue' /* webpackChunkName: "pages/app/index" */))
+const _6b3803b0 = () => interopDefault(import('..\\pages\\form.vue' /* webpackChunkName: "pages/form" */))
+const _a4a9d422 = () => interopDefault(import('..\\pages\\latihan.vue' /* webpackChunkName: "pages/latihan" */))
+const _31c1632e = () => interopDefault(import('..\\pages\\lifecycle.vue' /* webpackChunkName: "pages/lifecycle" */))
+const _c19daaec = () => interopDefault(import('..\\pages\\list.vue' /* webpackChunkName: "pages/list" */))
+const _3a6668bf = () => interopDefault(import('..\\pages\\storage.vue' /* webpackChunkName: "pages/storage" */))
+const _6268a696 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _52e04774 = () => interopDefault(import('..\\pages\\app\\detail\\_id.vue' /* webpackChunkName: "pages/app/detail/_id" */))
 
 const emptyFn = () => {}
 
@@ -24,33 +25,37 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/app%20-%20Copy",
-    component: _409c76f2,
-    name: "app - Copy"
+    path: "/app",
+    component: _6cfa5506,
+    name: "app"
   }, {
     path: "/form",
-    component: _2c559058,
+    component: _6b3803b0,
     name: "form"
   }, {
     path: "/latihan",
-    component: _89432f72,
+    component: _a4a9d422,
     name: "latihan"
   }, {
     path: "/lifecycle",
-    component: _c02d00f4,
+    component: _31c1632e,
     name: "lifecycle"
   }, {
     path: "/list",
-    component: _604eb732,
+    component: _c19daaec,
     name: "list"
   }, {
+    path: "/storage",
+    component: _3a6668bf,
+    name: "storage"
+  }, {
     path: "/",
-    component: _7606a224,
+    component: _6268a696,
     name: "index"
   }, {
-    path: "/app%20-%20Copy/detail/:id",
-    component: _de437204,
-    name: "app - Copy-detail-id"
+    path: "/app/detail/:id?",
+    component: _52e04774,
+    name: "app-detail-id"
   }],
 
   fallback: false

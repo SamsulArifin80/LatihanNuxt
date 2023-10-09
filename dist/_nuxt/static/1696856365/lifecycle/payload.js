@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/lifecycle", {data:[{}],fetch:{},mutations:void 0});

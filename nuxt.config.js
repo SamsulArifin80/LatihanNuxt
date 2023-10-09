@@ -65,4 +65,6 @@ export default {
       })
     ]
   },
+
+  target: 'static'
 }

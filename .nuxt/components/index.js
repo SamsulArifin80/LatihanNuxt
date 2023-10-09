@@ -1,8 +1,8 @@
-export { default as FooterWeb } from '../..\\components\\FooterWeb.vue'
-export { default as HeaderWeb } from '../..\\components\\HeaderWeb.vue'
-export { default as NuxtLogo } from '../..\\components\\NuxtLogo.vue'
-export { default as Tutorial } from '../..\\components\\Tutorial.vue'
-export { default as CardItem } from '../..\\components\\Card\\CardItem.vue'
+export const FooterWeb = () => import('../..\\components\\FooterWeb.vue' /* webpackChunkName: "components/footer-web" */).then(c => wrapFunctional(c.default || c))
+export const HeaderWeb = () => import('../..\\components\\HeaderWeb.vue' /* webpackChunkName: "components/header-web" */).then(c => wrapFunctional(c.default || c))
+export const NuxtLogo = () => import('../..\\components\\NuxtLogo.vue' /* webpackChunkName: "components/nuxt-logo" */).then(c => wrapFunctional(c.default || c))
+export const Tutorial = () => import('../..\\components\\Tutorial.vue' /* webpackChunkName: "components/tutorial" */).then(c => wrapFunctional(c.default || c))
+export const CardItem = () => import('../..\\components\\Card\\CardItem.vue' /* webpackChunkName: "components/card-item" */).then(c => wrapFunctional(c.default || c))
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

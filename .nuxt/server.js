@@ -22,22 +22,6 @@ import NuxtLink from './components/nuxt-link.server.js' // should be included af
     Vue.__nuxt__fetch__mixin__ = true
   }
 
-if (!Vue.__original_use__) {
-    Vue.__original_use__ = Vue.use
-    Vue.__install_times__ = 0
-    Vue.use = function (plugin, ...args) {
-      plugin.__nuxt_external_installed__ = Vue._installedPlugins.includes(plugin)
-      return Vue.__original_use__(plugin, ...args)
-    }
-  }
-  if (Vue.__install_times__ === 2) {
-    Vue.__install_times__ = 0
-    Vue._installedPlugins = Vue._installedPlugins.filter(plugin => {
-      return plugin.__nuxt_external_installed__ === true
-    })
-  }
-  Vue.__install_times__++
-
       // Component: <NuxtLink>
       Vue.component(NuxtLink.name, NuxtLink)
        Vue.component('NLink', NuxtLink)
@@ -84,12 +68,16 @@ export default async (ssrContext) => {
   // for beforeSerialize(nuxtState)
   ssrContext.beforeSerializeFns = []
   // Nuxt object (window.{{globals.context}}, defaults to window.__NUXT__)
-  ssrContext.nuxt = {  layout: 'default',  data: [],  fetch: { },  error: null , state: null, serverRendered: true, routePath: ''
+  ssrContext.nuxt = {  layout: 'default',  data: [],  fetch: { },  error: null , serverRendered: true, routePath: ''
 }
 
   ssrContext.fetchCounters = { }
 
   // Remove query from url is static target
+
+  if (ssrContext.url) {
+    ssrContext.url = ssrContext.url.split('?')[0]
+  }
 
   // Public runtime config
   ssrContext.nuxt.config = ssrContext.runtimeConfig.public
@@ -97,7 +85,7 @@ if (ssrContext.nuxt.config._app) {
   __webpack_public_path__ = joinURL(ssrContext.nuxt.config._app.cdnURL, ssrContext.nuxt.config._app.assetsPath)
 }
 // Create the app definition and the instance (created for each request)
-const { app, router, store } = await createApp(ssrContext, ssrContext.runtimeConfig.private)
+const { app, router } = await createApp(ssrContext, ssrContext.runtimeConfig.private)
 const _app = new Vue(app)
 // Add ssr route path to nuxt context so we can account for page navigation between ssr and csr
 ssrContext.nuxt.routePath = app.context.route.path
@@ -115,9 +103,6 @@ ssrContext.nuxt.routePath = app.context.route.path
   ssrContext.rendered = () => {
     // Call beforeSerialize() hooks
     ssrContext.beforeSerializeFns.forEach(fn => fn(ssrContext.nuxt))
-
-        // Add the state from the vuex store
-        ssrContext.nuxt.state = store.state
     }
 }
 
@@ -142,29 +127,8 @@ const render404Page = () => {
   return renderErrorPage()
 }
 
-  const s = Date.now()
-
   // Components are already resolved by setContext -> getRouteData (app/utils.js)
   const Components = getMatchedComponents(app.context.route)
-
-  /*
-  ** Dispatch store nuxtServerInit
-  */
-  if (store._actions && store._actions.nuxtServerInit) {
-      try {
-        await store.dispatch('nuxtServerInit', app.context)
-      } catch (err) {
-        console.debug('Error occurred when calling nuxtServerInit: ', err.message)
-      throw err
-      }
-    }
-    // ...If there is a redirect or an error, stop the process
-    if (ssrContext.redirected) {
-      return noopApp()
-    }
-    if (ssrContext.nuxt.error) {
-      return renderErrorPage()
-    }
 
   /*
   ** Call global middleware (nuxt.config.js)
@@ -297,8 +261,6 @@ const render404Page = () => {
 
     return Promise.all(promises)
 }))
-
-    if (process.env.DEBUG && asyncDatas.length) console.debug('Data fetching ' + ssrContext.url + ': ' + (Date.now() - s) + 'ms')
 
       // datas are the first row of each
       ssrContext.nuxt.data = asyncDatas.map(r => r[0] || {})

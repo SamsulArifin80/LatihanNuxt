@@ -1,44 +1,58 @@
 [
   {
-    "name": "app - Copy",
-    "path": "/app%20-%20Copy",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\app - Copy\\\\index.vue",
-    "chunkName": "pages/app - Copy/index"
+    "name": "app",
+    "path": "/app",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\app\\\\index.vue",
+    "chunkName": "pages/app/index",
+    "_name": "_6cfa5506"
   },
   {
     "name": "form",
     "path": "/form",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\form.vue",
-    "chunkName": "pages/form"
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\form.vue",
+    "chunkName": "pages/form",
+    "_name": "_6b3803b0"
   },
   {
     "name": "latihan",
     "path": "/latihan",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\latihan.vue",
-    "chunkName": "pages/latihan"
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\latihan.vue",
+    "chunkName": "pages/latihan",
+    "_name": "_a4a9d422"
   },
   {
     "name": "lifecycle",
     "path": "/lifecycle",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\lifecycle.vue",
-    "chunkName": "pages/lifecycle"
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\lifecycle.vue",
+    "chunkName": "pages/lifecycle",
+    "_name": "_31c1632e"
   },
   {
     "name": "list",
     "path": "/list",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\list.vue",
-    "chunkName": "pages/list"
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\list.vue",
+    "chunkName": "pages/list",
+    "_name": "_c19daaec"
+  },
+  {
+    "name": "storage",
+    "path": "/storage",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\storage.vue",
+    "chunkName": "pages/storage",
+    "_name": "_3a6668bf"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_6268a696"
   },
   {
-    "name": "app - Copy-detail-id",
-    "path": "/app%20-%20Copy/detail/:id",
-    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanCoba1\\\\pages\\\\app - Copy\\\\detail\\\\_id.vue",
-    "chunkName": "pages/app - Copy/detail/_id"
+    "name": "app-detail-id",
+    "path": "/app/detail/:id?",
+    "component": "D:\\\\Data Abang\\\\Project\\\\Nuxt\\\\LatihanNuxt1\\\\pages\\\\app\\\\detail\\\\_id.vue",
+    "chunkName": "pages/app/detail/_id",
+    "_name": "_52e04774"
   }
 ]
